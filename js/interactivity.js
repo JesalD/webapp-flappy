@@ -34,8 +34,16 @@ jQuery("#helpbtn").on("click", function() {
     );
 });
 
-function registerScore(score) { + "<li>" + score>10 + "</li>"
-}
+function registerScore(score) {
+
 
 var playerName = prompt("What's your name?");
 var scoreEntry = "<li>" + playerName + ":" + score.toString() + "</li>";
+
+jQuery("#topScorers").on("click", function() {
+
+  jQuery("#topScorers").append(scoreEntry);
+});
+
+
+}

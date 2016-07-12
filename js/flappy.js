@@ -9,17 +9,12 @@ var stateActions = { preload: preload, create: create, update: update };
 // - actions on the game state (or null for nothing)
 var game = new Phaser.Game(790, 400, Phaser.AUTO, 'game', stateActions);
 var score;
-score = -2;
+score = 0;
 var labelScore;
 
 var player;
 
-function changeScore() {
-      score = score + 1;
-      if(score > 0){
-        labelScore.setText(score.toString());
-      }
-}
+
 /*
  * Loads all resources for the game and gives them names.
  */
@@ -73,6 +68,8 @@ game.input.keyboard
         pipeInterval,
         generatePipe
     );
+
+    game.time.events.loop(pipeInterval, changeScore);
 }
 
 function playerJump() {
@@ -101,7 +98,7 @@ function generatePipe() {
             addPipeBlock(800, count*50);
         }
     }
-    changeScore();
+    //changeScore();
 }
 var pipes = [];
 function addPipeBlock(x, y) {
@@ -126,7 +123,13 @@ function update() {
 }
 function gameOver(){
 
-    registerScore(score>10);
+if (score > 10){
+registerScore(score);
+
+}
+
+
+    score = 0;
     game.state.restart();
 }
 
@@ -134,4 +137,10 @@ function gameOver(){
 
 function clickHandler(event) {
 game.add.sprite(event.x-25, event.y-25, "playerImg");
+}
+
+function changeScore() {
+      score = score + 1;
+        labelScore.setText(score.toString());
+
 }
