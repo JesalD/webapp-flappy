@@ -1,0 +1,9 @@
+Flappy Man!
+
+Welcome to Flappy Man
+Here will be the game
+
+How to play:
+-Press SPACE to let him fly
+-Avoid the pipes
+-If you crash, try again!

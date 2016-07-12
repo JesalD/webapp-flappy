@@ -1,0 +1,30 @@
+h1 {
+    color: blue;
+    font-size: 40px;
+    font-family:  "Ar Cena";
+}
+
+h3 {
+    color: #F38B00;
+    font-size: 25px;
+    font-style: italic;
+    font-family:  "Ar Cena";
+}
+
+.score {
+    color: indigo;
+}
+
+
+.gold {
+    color: gold;
+}
+
+#gameLink {
+    text-align: center;
+    border: 0px solid indigo;
+}
+
+.lightbluebg {
+  background-color: lightblue;
+}
