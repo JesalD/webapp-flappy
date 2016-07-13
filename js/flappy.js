@@ -17,7 +17,7 @@ var labelScore;
 var player;
 var balloons = [];
 var weights = [];
-var gameGravity;
+var gameGravity = 200;
 var arr = ["zero", "one", "two", "three", "four"];
 for(var i = 0; i < arr.length; i++){
     console.log(arr + " " + i + "th is " + arr[i]);
@@ -66,7 +66,7 @@ function create() {
   game.physics.arcade.enable(player);
 
   player.body.velocity.y = -200;
-  player.body.gravity.y = 235;
+  player.body.gravity.y = gameGravity;
 
   game.input.keyboard
   .addKey(Phaser.Keyboard.SPACEBAR)
@@ -79,7 +79,6 @@ function create() {
   );
 
   game.time.events.loop(pipeInterval, changeScore);
-  var gameGravity = 200;
 
 }
 
@@ -156,8 +155,8 @@ function update() {
 
     });
 }
-checkBonus(balloons, -50);
-checkBonus(weights, 50);
+checkBonus(balloons, -30);
+checkBonus(weights, 30);
 }
 for(var i = weights.length - 1; i >= 0; i--){
  game.physics.arcade.overlap(player, balloons[i], function(){
