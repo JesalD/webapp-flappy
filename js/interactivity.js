@@ -29,7 +29,7 @@ jQuery("#helpbtn").on("click", function() {
     jQuery("#content").append(
         "<ul>"
             + "<li>" + "Press SPACE to keep Flappy Man flying" + "</li>"
-            + "<li>" + "Avoid the incoming pipes" + "</li>"
+          + "<li>" + "Avoid the incoming pipes" + "</li>"
         + "</ul>"
     );
 });
@@ -47,3 +47,15 @@ jQuery("#topScorers").on("click", function() {
 
 
 }
+
+jQuery("#sharing").on("click", function(){
+    var text =
+        "I scored " +
+        score.toString() +
+        " in Flappy Birdy! Can you do better?";
+    var escapedText = encodeURIComponent(text);
+    var url =
+        "https:twitter.com/share?text=" +
+        escapedText;
+    jQuery("#sharing").attr("href", url);
+});
