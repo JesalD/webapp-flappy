@@ -85,6 +85,7 @@ function create() {
 function playerJump() {
   player.body.velocity.y = -150;
   var jumpPower = 200;
+    game.sound.play("score");
 }
 
 function moveRight() {
